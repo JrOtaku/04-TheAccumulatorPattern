@@ -104,7 +104,7 @@ def sum_more_cosines(m, n):
          which is approximately 0.02082.
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
@@ -216,7 +216,7 @@ def count_sines_from(m, n):
 def run_test_count_sines_vs_cosines():
     """ Tests the   count_sines_vs_cosines   function. """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # Done: 6. Implement this TEST function.
     #   It TESTS the  count_sines_vs_cosines  function defined below.
     #   Include at least **   6   ** tests (we wrote one for you).
     #              ** Yes, 6 (six) tests. **
@@ -235,13 +235,37 @@ def run_test_count_sines_vs_cosines():
     print('       actual:  ', answer)
 
     # -------------------------------------------------------------------------
-    # TODO: 6 (continued).
+    # Done: 6 (continued).
     # Below this comment, add 5 more test cases of your own choosing.
     # -------------------------------------------------------------------------
 
     # Test 2:
-    expected = 100
-    answer = count_sines_vs_cosines(101)
+    expected = 4
+    answer = count_sines_vs_cosines(3)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 3:
+    expected = 0
+    answer = count_sines_vs_cosines(0)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 4:
+    expected = 1
+    answer = count_sines_vs_cosines(1)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 5:
+    expected = 2
+    answer = count_sines_vs_cosines(2)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 6:
+    expected = 5
+    answer = count_sines_vs_cosines(4)
     print('Test 2 expected:', expected)
     print('       actual:  ', answer)
 
@@ -253,15 +277,15 @@ def count_sines_vs_cosines(m):
        inclusive, whose sine is greater than its cosine.
     Side effects:   None.
     Examples:
-    Since:  sine(-5) is about  0.96  and cosine(-5) is about  0.28
-            sine(-4) is about  0.76  and cosine(-4) is about -0.65
-            sine(-3) is about -0.14  and cosine(-3) is about -0.99
+    Since:  sine(-5) is about  0.96  and cosine(-5) is about  0.28  *
+            sine(-4) is about  0.76  and cosine(-4) is about -0.65  *
+            sine(-3) is about -0.14  and cosine(-3) is about -0.99  *
             sine(-2) is about -0.91  and cosine(-2) is about -0.42
             sine(-1) is about -0.84  and cosine(-1) is about  0.54
             sine(0)  is about  0.00  and  cosine(0) is about  1.00
-            sine(1)  is about  0.84  and  cosine(1) is about  0.54
-            sine(2)  is about  0.91  and  cosine(2) is about -0.42
-            sine(3)  is about  0.14  and  cosine(3) is about -0.99
+            sine(1)  is about  0.84  and  cosine(1) is about  0.54  *
+            sine(2)  is about  0.91  and  cosine(2) is about -0.42  *
+            sine(3)  is about  0.14  and  cosine(3) is about -0.99  *
             sine(4)  is about -0.76  and  cosine(4) is about -0.65
             sine(5)  is about -0.96  and  cosine(5) is about  0.28
       -- count_sines_vs_cosines(5) returns 6 because
@@ -272,14 +296,19 @@ def count_sines_vs_cosines(m):
       -- Also:  count_sines_vs_cosines(101) returns 100 (trust me!)
     """
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT: As in previous problems in this session,
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # -------------------------------------------------------------------------
-
+    import math
+    count = 0
+    for k in range (-m, m+1):
+        if math.cos(k) <= math.sin(k):
+            count = count + 1
+    return (count)
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
